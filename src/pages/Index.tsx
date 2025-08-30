@@ -1,14 +1,40 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import React from 'react';
+import { ThemeProvider } from '../hooks/useTheme';
+import { ParticleBackground } from '../components/ParticleBackground';
+import { Navigation } from '../components/Navigation';
+import { Hero } from '../components/Hero';
+import { About } from '../components/About';
+import { Projects } from '../components/Projects'; 
+import { Skills } from '../components/Skills';
+import { Contact } from '../components/Contact';
+import { Footer } from '../components/Footer';
 
-const Index = () => {
+const Portfolio = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <ThemeProvider>
+      <div className="relative min-h-screen">
+        {/* Particle Background */}
+        <ParticleBackground />
+        
+        {/* Navigation */}
+        <Navigation />
+        
+        {/* Main Content */}
+        <main className="relative z-10">
+          <section id="hero">
+            <Hero />
+          </section>
+          <About />
+          <Projects />
+          <Skills />
+          <Contact />
+        </main>
+        
+        {/* Footer */}
+        <Footer />
       </div>
-    </div>
+    </ThemeProvider>
   );
 };
 
-export default Index;
+export default Portfolio;
