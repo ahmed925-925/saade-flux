@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu - Coffee Shop</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+    <!-- ====== Header ====== -->
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">
+                <h2 class="logo-text">☕ coffee</h2>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html">About</a></li>
+                <li><a href="menu.html" class="active">Menu</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="testers.html">Testers</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ====== Main Content ====== -->
+    <main>
+        <section class="menu-section">
+            <div class="container">
+                <h2 class="menu-title">Our Premium Menu</h2>
+                <p class="menu-subtitle">Discover our carefully crafted beverages and delicious treats</p>
+
+                <!-- ====== Categories ====== -->
+                <div class="menu-categories">
+                    <button class="category-btn active" data-category="all">All</button>
+                    <button class="category-btn" data-category="coffee">Coffee</button>
+                    <button class="category-btn" data-category="beverages">Beverages</button>
+                    <button class="category-btn" data-category="food">Food</button>
+                </div>
+
+                <!-- ====== All Section ====== -->
+                <div class="menu-content" id="all">
+                    <h2 class="section-title">All Items</h2>
+                    <div class="menu-grid">
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="coffee-hero-section.png" alt="Espresso">
+                                <div class="item-overlay">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">Premium Espresso</h3>
+                                <p class="menu-item-description">Rich and bold espresso shot made from finest beans</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-price">$2.50</span>
+                                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="coffee-hero-section.png" alt="Latte">
+                                <div class="item-overlay">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">Creamy Latte</h3>
+                                <p class="menu-item-description">Smooth latte with perfectly steamed milk</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-price">$3.50</span>
+                                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="refreshment.png" alt="Fresh Juice">
+                                <div class="item-overlay">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">Fresh Strawberry Juice</h3>
+                                <p class="menu-item-description">Refreshing strawberry juice with mint</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-price">$3.25</span>
+                                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <div class="menu-item-image">
+                                <img src="gallery-2.jpg" alt="Breakfast">
+                                <div class="item-overlay">
+                                    <button class="add-to-cart">Add to Cart</button>
+                                </div>
+                            </div>
+                            <div class="menu-item-content">
+                                <h3 class="menu-item-title">Hearty Breakfast</h3>
+                                <p class="menu-item-description">Complete breakfast with eggs, sausage, and vegetables</p>
+                                <div class="menu-item-footer">
+                                    <span class="menu-item-price">$8.50</span>
+                                    <span class="rating">⭐⭐⭐⭐⭐</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Category filter
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                btn.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
